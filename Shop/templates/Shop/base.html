@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Shop/css/bootstrap.min.css' %}">
+    <title>{% block title %} My shop{% endblock %}</title>
+</head>
+<body>
+    {% include "Shop/includes/header.html" %}
+    <main class="my-4" style="min-height: 70vh;">
+        {% block content %}{% endblock %}
+    </main>
+    {% include "Shop/includes/footer.html" %}
+</body>
+</html>
