@@ -1,3 +1,29 @@
 {% extends 'Shop/base.html' %}
 {% load static %}
 {% block title %}Shop-catalog{% endblock %} 
+{% block content %}
+<h1 class="text-center fw-bold mb-4">Catalog</h1>
+<div class="d-flex gap-3 flex-wrap mx-auto justify-content-center" style="max-width: 800px;">
+<div class="card rounded-4" style="width: 18rem;">
+    <img src="https://kamin-vek.ru/wa-data/public/shop/products/96/53/5396/images/15571/15571.750x0.jpg" alt="" class="card-img-top rounded-4">
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title">Камин</h5>
+      <span class="card-text d-flex mt-auto">
+        <span class="fs-2 fw-bold">89 999₽</span>
+        <span class="text-danger fs-6">-50%</span>
+      </span>
+      <div class="d-flex gap-1 mb-3">
+        <img src="{% static 'Shop/img/star.png' %}" alt="" width="20" height="20">
+        <img src="{% static 'Shop/img/star.png' %}" alt="" width="20" height="20">
+        <img src="{% static 'Shop/img/star.png' %}" alt="" width="20" height="20">
+        <img src="{% static 'Shop/img/star.png' %}" alt="" width="20" height="20">
+        <img src="{% static 'Shop/img/star.png' %}" alt="" width="20" height="20" style="filter: grayscale(1);">
+      </div>
+      <button class="btn btn-primary">Подробнее</button>
+      <small class="text-black-50 mt-2">
+        Камин-Юг, Мрамор
+      </small>
+    </div>
+  </div>
+</div>
+{% endblock %}
