@@ -1,0 +1,15 @@
+{% extends 'Shop/base.html' %}
+{% load static %}
+{% block title %}Shop-orders{% endblock %}
+{% block content %}
+<h1 class="text-center fw-bold mb-4">Orders</h1>
+{% for order in orders %}
+<div class="d-flex flex-column text-center border-2 px-4 py-2 mx-auto" style="max-width: 800px; box-shadow: 0 0 5px black;">
+<span class="align-self-start fw-bold fs-5">{{order.id}}</span>
+<img src="{{order.product.img.url}}" alt="" width="100" height="100" class="d-block mx-auto">
+<span class="fw-bold">{{order.product.name}}</span>
+<span>{{order.adress}}</span>
+<span>{{order.created_at}}</span>
+</div>
+{% endfor %}
+{% endblock %}
