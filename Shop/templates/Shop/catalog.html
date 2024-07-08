@@ -3,7 +3,7 @@
 {% block title %}Shop-catalog{% endblock %}
 {% block content %}
 <h1 class="text-center fw-bold mb-4">Catalog</h1>
-<div class="d-flex gap-3 flex-wrap mx-auto justify-content-center" style="max-width: 800px;">
+<div class="d-flex gap-3 flex-wrap mx-auto justify-content-center" style="max-width: 1000px;">
   {% for product in products %}
   <div class="card rounded-4" style="width: 18rem;">
     <img src="{{product.img.url}}" alt="" class="card-img-top rounded-4">
