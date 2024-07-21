@@ -11,3 +11,11 @@ def orders(request):
 
 def order_create(request):
     return render(request, 'Shop/order_create.html/')
+
+def product_detail(request, product_id):
+    product = Product.objects.get(id=product_id)
+    return render(request, 'Shop/product_detail.html', {"product": product})
+
+def order_create(request, product_id):
+    product = Product.objects.get(id=product_id)
+    return render(request, 'Shop/order_create.html', {"product": product})
