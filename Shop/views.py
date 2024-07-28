@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Product, Order
 # Create your views here.
 def catalog(request):
@@ -18,4 +18,10 @@ def product_detail(request, product_id):
 
 def order_create(request, product_id):
     product = Product.objects.get(id=product_id)
+    if request.method == "POST":
+        Order.objects.create(
+            product = product,
+            adress = request.POST.get("adress")
+        )
+        return redirect("catalog")
     return render(request, 'Shop/order_create.html', {"product": product})

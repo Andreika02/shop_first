@@ -1,0 +1,15 @@
+{% extends 'Core/base.html' %}
+{% load static %}
+{% block title %}Shop-signin{% endblock %}
+{% block content %}
+<h1 class="text-center">Signin</h1>
+<div class="d-flex gap-3 flex-wrap justify-content-center mx-auto">
+    <form action="" class="d-flex flex-column gap-2" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="username" minlength="6" maxlength="50" class="form-control">
+        <input type="password" name="password" placeholder="password" minlength="6" maxlength="50" class="form-control">
+        <button type="submit" class="btn btn-secondary">Login</button>
+    </form>
+</div>
+
+{% endblock %}
