@@ -3,6 +3,9 @@
 {% block title %}Shop-signin{% endblock %}
 {% block content %}
 <h1 class="text-center">Signin</h1>
+{% if error %}
+<p class="text-center fw-bold text-danger">{{error}}</p>
+{% endif %}
 <div class="d-flex gap-3 flex-wrap justify-content-center mx-auto">
     <form action="" class="d-flex flex-column gap-2" method="post">
         {% csrf_token %}

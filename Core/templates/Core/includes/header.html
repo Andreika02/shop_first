@@ -1,6 +1,15 @@
+{% load static %}
 <header class="d-flex justify-content-center py-3">
     <ul class="nav nav-pills">
       <li class="nav-item"><a href="{% url 'catalog' %}" class="nav-link active" aria-current="page">Catalog</a></li>
       <li class="nav-item"><a href="{% url 'orders' %}" class="nav-link" aria-current="page">Orders</a></li>
+      <li class="nav-item"><a href="{% url 'orders' %}" class="nav-link" aria-current="page">Signin</a></li>
+      <li class="nav-item"><a href="{% url 'orders' %}" class="nav-link" aria-current="page">Signup</a></li>
+      <li class="nav-item"><a href="{% url 'orders' %}" class="nav-link" aria-current="page">
+        <img src="{% static 'Core/img/profile.png' %}" alt="">
+      </a></li>
+      <li class="nav-item"><a href="{% url 'orders' %}" class="nav-link" aria-current="page">
+        <img src="{% static 'Core/img/logout.png' %}" alt="">
+      </a></li>
     </ul>
   </header>
