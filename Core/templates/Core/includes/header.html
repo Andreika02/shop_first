@@ -3,13 +3,16 @@
     <ul class="nav nav-pills">
       <li class="nav-item"><a href="{% url 'catalog' %}" class="nav-link active" aria-current="page">Catalog</a></li>
       <li class="nav-item"><a href="{% url 'orders' %}" class="nav-link" aria-current="page">Orders</a></li>
-      <li class="nav-item"><a href="{% url 'orders' %}" class="nav-link" aria-current="page">Signin</a></li>
-      <li class="nav-item"><a href="{% url 'orders' %}" class="nav-link" aria-current="page">Signup</a></li>
-      <li class="nav-item"><a href="{% url 'orders' %}" class="nav-link" aria-current="page">
-        <img src="{% static 'Core/img/profile.png' %}" alt="">
+      {% if request.user.is_authenticated %}
+      <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link" aria-current="page">
+        <img width="36" src="{% static 'Core/img/profile.png' %}" alt="">
       </a></li>
-      <li class="nav-item"><a href="{% url 'orders' %}" class="nav-link" aria-current="page">
-        <img src="{% static 'Core/img/logout.png' %}" alt="">
+      <li class="nav-item"><a href="{% url 'signout' %}" class="nav-link" aria-current="page">
+        <img width="36" src="{% static 'Core/img/logout.png' %}" alt="">
       </a></li>
+      {% else %}
+      <li class="nav-item"><a href="{% url 'signin' %}" class="nav-link" aria-current="page">Signin</a></li>
+      <li class="nav-item"><a href="{% url 'signup' %}" class="nav-link" aria-current="page">Signup</a></li>
+      {% endif %}
     </ul>
   </header>

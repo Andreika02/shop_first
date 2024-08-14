@@ -1,0 +1,10 @@
+{% extends 'Core/base.html' %}
+{% load static %}
+{% block title %} Profile {% endblock %}
+{% block content %}
+<h1 class="text-center">Profile</h1>
+<h2 class="text-center">Username</h2>
+<p class="text-center">{{ request.user }}</p>
+<h2 class="text-center">Email</h2>
+<p class="text-center">{{ request.user.email }}</p>
+{% endblock %}

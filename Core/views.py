@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 def signup(request):
+    if request.user.is_authenticated:
+        return redirect("profile")
     if request.method == "POST":
         username = request.POST.get("username")
         email = request.POST.get("email")
@@ -21,6 +23,8 @@ def signup(request):
 
 
 def signin(request):
+    if request.user.is_authenticated:
+        return redirect("profile")
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
