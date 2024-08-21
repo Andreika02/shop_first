@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'Shop/css/bootstrap.min.css' %}">
+    <script defer src="{% static 'Shop/js/bootstrap.bundle.min.js' %}"></script>
+    <script defer src="{% static 'Shop/js/theme.js' %}"></script>
     <title>{% block title %} My shop{% endblock %}</title>
 </head>
-<body>
+<body class="d-flex flex-column" data-bs-theme="dark">
     {% include "Core/includes/header.html" %}
     <main class="my-4" style="min-height: 70vh;">
         {% block content %}{% endblock %}
