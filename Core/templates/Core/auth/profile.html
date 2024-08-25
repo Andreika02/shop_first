@@ -2,9 +2,43 @@
 {% load static %}
 {% block title %} Profile {% endblock %}
 {% block content %}
-<h1 class="text-center">Profile</h1>
+<div class="d-flex flex-column mx-auto" style="width: min-content;">
+<div class="d-flex align-items-center gap-3">
+    {% if request.user.avatar %}
+    <img src="{{ request.user.avatar.url }}" width="100" height="100" alt="" class="rounded-5 object-fit-cover">
+    {% else %}
+    <img src="{% static 'Core/img/profile2.png' %}" alt="" width="100" height="100">
+    {% endif %}
+    <h1 class="text-center text-body fw-bold">{{ request.user.username }}</h1>
+</div>
+<ul>
+    {% if request.user.first_name %}
+    <li>
+        {{ request.user.first_name }}
+    </li>
+    {% endif %}
+    {% if request.user.last_name %}
+    <li>
+        {{ request.user.last_name }}
+    </li>
+    {% endif %}
+    {% if request.user.email %}
+    <li>
+        {{ request.user.email }}
+    </li>
+    {% endif %}
+</ul>
+<a href="{% url 'orders' %}" class="btn border-secondary mx-auto"> My orders</a>
+</div>
+
+
+
+
+
+
+<!-- <h1 class="text-center">Profile</h1>
 <h2 class="text-center">Username</h2>
 <p class="text-center">{{ request.user }}</p>
 <h2 class="text-center">Email</h2>
-<p class="text-center">{{ request.user.email }}</p>
+<p class="text-center">{{ request.user.email }}</p> -->
 {% endblock %}
